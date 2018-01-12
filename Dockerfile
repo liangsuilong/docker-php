@@ -9,7 +9,7 @@ ENV PHP_VERSION 7.0
 Run apt-get -y update && \
     apt-get -y install software-properties-common && \
     add-apt-repository -y ppa:nginx/stable && \
-    add-apt-repository -y ppa:nginx/stable && \
+    add-apt-repository -y ppa:ondrej/php && \
     # sed 's/ppa.launchpad.net/launchpad.proxy.ustclug.org/g' -i `grep ppa.launchpad.net -rl /etc/apt/sources.list.d/` && \
     apt-get -y update && \
     apt-get -y install nginx-full supervisor php${PHP_VERSION}-fpm php${PHP_VERSION}-cli php${PHP_VERSION}-curl php${PHP_VERSION}-gd php${PHP_VERSION}-intl \ 
