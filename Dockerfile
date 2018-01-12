@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER  Suilong Liang <suilong.liang@worktogether.io>
 
-ENV PHP_VERSION 7.0
+ENV PHP_VERSION 7.1
 
 #RUN sed 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' -i /etc/apt/sources.list && \
 #    sed 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' -i /etc/apt/sources.list && \

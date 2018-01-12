@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PHP_VERSION=7.0
+PHP_VERSION=7.1
 
 if [[ $1 == 'start' ]]; then
 	sed "s/www-data/root/g" -i /etc/nginx/nginx.conf
