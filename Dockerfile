@@ -18,5 +18,6 @@ Run apt-get -y update && \
 ADD entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 VOLUME /var/www/html /etc/php/${PHP_VERSION}/fpm/
+EXPOSE 9000
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["start"]
