@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PHP_VERSION=7.1
+PHP_VERSION=7.0
 
 if [[ $1 == 'start' ]]; then
 	sed "s/\/run\/php\/php${PHP_VERSION}-fpm.pid/\/run\/php${PHP_VERSION}-fpm.pid/g" -i /etc/php/${PHP_VERSION}/fpm/php-fpm.conf
