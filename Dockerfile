@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER  Suilong Liang <suilong.liang@worktogether.io>
 
-ENV PHP_VERSION 7.0
+ENV PHP_VERSION 7.1
 ENV LC_ALL C.UTF-8
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
