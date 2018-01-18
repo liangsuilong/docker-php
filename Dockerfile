@@ -20,6 +20,8 @@ ADD entrypoint.sh /usr/local/bin/entrypoint.sh
 
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+RUN mkdir -p /run/php/
+
 VOLUME /var/www/html/ /etc/php/${PHP_VERSION}/fpm/
 
 EXPOSE 9000
