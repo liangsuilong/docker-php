@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER  Suilong Liang <suilong.liang@worktogether.io>
 
-ENV PHP_VERSION 7.1
+ENV PHP_VERSION 5.6
 ENV LC_ALL C.UTF-8
 
 # Manually Add Ondrej PHP PPA https://launchpad.net/~ondrej/+archive/ubuntu/php

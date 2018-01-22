@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PHP_VERSION=7.1
+PHP_VERSION=5.6
 
 if [[ $1 == 'start' ]]; then
         
