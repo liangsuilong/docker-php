@@ -2,7 +2,9 @@ FROM ubuntu:16.04
 
 MAINTAINER  Suilong Liang <suilong.liang@worktogether.io>
 
-ENV PHP_VERSION 5.6
+ENV PHP_MAJOR 5.6
+ENV PHP_VERSION 5.6.33
+ENV PHP_VERSION_MINOR 1+ubuntu16.04.1+deb.sury.org+1
 ENV LC_ALL C.UTF-8
 
 # Manually Add Ondrej PHP PPA https://launchpad.net/~ondrej/+archive/ubuntu/php
@@ -10,8 +12,19 @@ RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 14AA40EC08
 RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu xenial main" > /etc/apt/sources.list.d/php.list
 
 RUN apt-get -y update && \
-    apt-get -y install php${PHP_VERSION}-fpm php${PHP_VERSION}-cli php${PHP_VERSION}-curl php${PHP_VERSION}-gd php${PHP_VERSION}-intl php-xdebug \ 
-    php${PHP_VERSION}-mbstring php${PHP_VERSION}-mcrypt php${PHP_VERSION}-mysql php${PHP_VERSION}-simplexml php${PHP_VERSION}-soap php${PHP_VERSION}-xsl php${PHP_VERSION}-zip && \
+    apt-get -y -V install php${PHP_MAJOR}-fpm \
+	php${PHP_MAJOR}-cli=${PHP_VERSION}-${PHP_VERSION_MINOR} \
+	php${PHP_MAJOR}-curl=${PHP_VERSION}-${PHP_VERSION_MINOR} \
+	php${PHP_MAJOR}-gd=${PHP_VERSION}-${PHP_VERSION_MINOR} \
+	php${PHP_MAJOR}-intl=${PHP_VERSION}-${PHP_VERSION_MINOR} \
+	php-xdebug \ 
+	php${PHP_MAJOR}-mbstring=${PHP_VERSION}-${PHP_VERSION_MINOR} \
+	php${PHP_MAJOR}-mcrypt=${PHP_VERSION}-${PHP_VERSION_MINOR} \
+	php${PHP_MAJOR}-mysql=${PHP_VERSION}-${PHP_VERSION_MINOR} \
+	php${PHP_MAJOR}-xml=${PHP_VERSION}-${PHP_VERSION_MINOR} \
+	php${PHP_MAJOR}-soap=${PHP_VERSION}-${PHP_VERSION_MINOR} \
+	php${PHP_MAJOR}-xsl=${PHP_VERSION}-${PHP_VERSION_MINOR} \
+	php${PHP_MAJOR}-zip=${PHP_VERSION}-${PHP_VERSION_MINOR} && \
     rm -rf /var/lib/apt/lists/*
 
 ADD entrypoint.sh /usr/local/bin/entrypoint.sh
@@ -20,7 +33,7 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 
 RUN mkdir -p /run/php/
 
-VOLUME /var/www/html/ /etc/php/${PHP_VERSION}/fpm/
+VOLUME /var/www/html/ /etc/php/${PHP_MAJOR}/fpm/
 
 EXPOSE 9000
 
