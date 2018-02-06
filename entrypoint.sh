@@ -5,7 +5,7 @@ PHP_MAJOR=7.1
 if [[ $1 == 'start' ]]; then
         
         # Change listen address from UNIX socket to TCP port
-	sed "s/\/run\/php\/php${PHP_MAJOR}-fpm.sock/0.0.0.0:9000/g" -i /etc/php/${PHP_VERSION}/fpm/pool.d/www.conf
+	sed "s/\/run\/php\/php${PHP_MAJOR}-fpm.sock/0.0.0.0:9000/g" -i /etc/php/${PHP_MAJOR}/fpm/pool.d/www.conf
 
         # Change PHP code to www-data
 	chown -R www-data:www-data /var/www/html/
