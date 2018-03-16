@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 MAINTAINER  Suilong Liang <suilong.liang@worktogether.io>
 
 ENV PHP_MAJOR 7.2
-ENV PHP_VERSION 7.2.2
+ENV PHP_VERSION 7.2.3
 ENV PHP_VERSION_MINOR 1+ubuntu16.04.1+deb.sury.org+1
 ENV LC_ALL C.UTF-8
 
